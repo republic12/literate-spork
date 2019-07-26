@@ -1,0 +1,4 @@
+Here are the instructions
+
+#Foreach of that mailbox verify if the email address policy is set to true , then change it to false modify the smtp address the set back to true
+#Else modify the emailaddress and set on the mailbox
