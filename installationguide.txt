@@ -1,0 +1,24 @@
+Installation guide
+---------------------
+To install PowerShell on a Windows client or Windows Server (works on Windows 7 SP1, Server 2008 R2, and later), download the MSI package from our GitHub releases page. Scroll down to the Assets section of the Release you want to install. The Assets section may be collapsed, so you may need to click to expand it.
+
+The MSI file looks like this - PowerShell-<version>-win-<os-arch>.msi
+
+Once downloaded, double-click the installer and follow the prompts.
+
+The installer creates a shortcut in the Windows Start Menu.
+
+By default the package is installed to $env:ProgramFiles\PowerShell\<version>
+You can launch PowerShell via the Start Menu or $env:ProgramFiles\PowerShell\<version>\pwsh.exe
+Administrative install from the command line
+MSI packages can be installed from the command line. This allows administrators to deploy packages without user interaction. The MSI package for PowerShell includes the following properties to control the installation options:
+
+ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL - This property controls the option for adding the Open PowerShell item to the context menu in Windows Explorer.
+ENABLE_PSREMOTING - This property controls the option for enabling PowerShell remoting during installation.
+REGISTER_MANIFEST - This property controls the option for registering the Windows Event Logging manifest.
+The following examples shows how to silently install PowerShell Core with all the install options enabled.
+
+PowerShell
+
+Copy
+msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSR
