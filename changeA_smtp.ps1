@@ -21,4 +21,4 @@ foreach($mbx in $a)
    Set-ADUser $mbx.Distinguishedname -Add @{"proxyaddresses"=$new1}
    Write-host "we have modiofied email address is $mbx.Alias"
 }
-{get-mailbox}
+
